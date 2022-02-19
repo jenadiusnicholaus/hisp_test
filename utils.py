@@ -1,3 +1,4 @@
+from convtools import conversion as c
 
 data = {
     "headers":
@@ -9,9 +10,15 @@ def groupCellBy():
     pass 
 
 
-def getCell(items ,dx, ou, pe):
+def getCell(items ,dx, ou, pe, rows):
     cells = []
+    for d in dx:
+         for row in rows:
+            if d in row:
+                # print(row[-1])
+                cells.append([row[-1]])
 
+    print(cells)
     return cells
 
 
@@ -39,7 +46,7 @@ def rows(items, ou):
     rows = []
     for item in items:
         if item in ou:
-            rows.append([items[item]['name'], "\n".join(nested_rows), ''.join(['data']), ''.join('data') ,''.join('data'), ''.join('data'),''.join('data'),''.join('data') ])
+            rows.append([items[item]['name'], "\n".join(nested_rows), '\n'.join(['147.1','7376' , '9393']), '\n'.join(['147.1','7376' , '9393']) ,'\n'.join(['147.1','7376' , '9393']), '\n'.join(['147.1','7376' , '9393']),'\n'.join(['147.1','7376' , '9393']) ])
             # print([items[item]['name']])
     # print(rows)
     return rows
