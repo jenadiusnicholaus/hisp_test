@@ -15,13 +15,20 @@ def getNestedRow(dx , items ):
     nested_row = []
     for item in items:
         if item in dx:
-            print(item)
+            # print(item)
             nested_row.append(items[item]['name'])
             
     return nested_row
 nested_rows = getNestedRow(data['metaData']['dimensions']['dx'], data['metaData']['items'])  
 
+def getCell(dx, ou, pe):
+    cells=[]
+   
+    return cells
 
+    
+    
+cells = getCell(data['rows'])
 
 def column(items, period):
     cols = [' ', ' ']
@@ -36,9 +43,9 @@ def rows(items, ou):
     rows = []
     for item in items:
         if item in ou:
-            rows.append([items[item]['name'], "\n".join(nested_rows), ''.join('data')])
+            rows.append([items[item]['name'], "\n".join(nested_rows), ''.join(['data']), ''.join('cells data') ,''.join('cells data'), ''.join('cells data'),''.join('cells data'),''.join('cells data') ])
             # print([items[item]['name']])
-    print(rows)
+    # print(rows)
     return rows
 
 
