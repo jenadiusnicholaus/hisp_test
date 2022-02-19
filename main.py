@@ -5,12 +5,6 @@ from utils import columns, data, getCell, rows
 pprintpp.pprint(data)
 
 
-cells = getCell(
-    data['metaData']['items'],
-    data['metaData']['dimensions']['dx'],
-    data['metaData']['dimensions']['ou'],
-    data['metaData']['dimensions']['pe'],
-    data['rows'])
 
 my_row = rows(
     data['metaData']['items'],
