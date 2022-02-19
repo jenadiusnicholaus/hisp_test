@@ -1,23 +1,9 @@
 import pprintpp
 from tabulate import tabulate
-from utils import  columns, data, rows
+from utils import  columns, data, getCell, rows
 
+pprintpp.pprint(data)
 
-
-pprintpp.pprint(data,)
-
-def getCell(items ,dx, ou, pe):
-    cells = []
-
-    return cells
-
-def mycell(rows):
-    cells = []
-    for cell in rows:
-        print(cell[-1])
-        cells.append(cell[-1])
-    return cells
-cells = mycell(data['rows'])
 
 cells = getCell(data['metaData']['items'], data['metaData']['dimensions']['dx'], data['metaData']['dimensions']['ou'], data['metaData']['dimensions']['pe'])
 
