@@ -22,6 +22,9 @@ def getCell(items ,dx, ou, pe, rows):
 
 
 def getNestedRow(dx , items ):
+    """
+        generatig nested rows from pe
+    """
     nested_rows  = []
     for item in items:
         if item in dx:
@@ -33,6 +36,9 @@ nested_rows = getNestedRow(data['metaData']['dimensions']['dx'], data['metaData'
 
 
 def columns(items, period):
+    """
+        generatig columns from pe
+    """
     cols = [' ', ' ']
     for item in items:
         if item in period:
@@ -42,10 +48,21 @@ def columns(items, period):
 
 
 def rows(items, ou):
+    """
+    generatig rows from ou
+    """
     rows = []
     for item in items:
         if item in ou:
-            rows.append([items[item]['name'], "\n".join(nested_rows), '\n'.join(['147.1','7376' , '9393']), '\n'.join(['147.1','7376' , '9393']) ,'\n'.join(['147.1','7376' , '9393']), '\n'.join(['147.1','7376' , '9393']),'\n'.join(['147.1','7376' , '9393']) ])
+            # just for testing
+            rows.append([
+                items[item]['name'], 
+                "\n".join(nested_rows), 
+                '\n'.join(['147.1','7376' , '9393']), 
+                '\n'.join(['147.1','7376' , '9393']) ,
+                '\n'.join(['147.1','7376' , '9393']), 
+                '\n'.join(['147.1','7376' , '9393']),
+                '\n'.join(['147.1','7376' , '9393']) ])
             # print([items[item]['name']])
     # print(rows)
     return rows
