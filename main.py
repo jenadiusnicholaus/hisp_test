@@ -51,6 +51,3 @@ def createTable(my_row, cols):
     table = zip(my_row, data_cell, data_cell, data_cell,
                 data_cell, data_cell, data_cell, data_cell)
     print(tabulate(table, headers=cols,  tablefmt="fancy_grid"))
-
-
-createTable(my_row, cols)
