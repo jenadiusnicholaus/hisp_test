@@ -21,14 +21,14 @@ def getNestedRow(dx , items ):
     return nested_row
 nested_rows = getNestedRow(data['metaData']['dimensions']['dx'], data['metaData']['items'])  
 
-def getCell(dx, ou, pe):
+def getCell(items ,dx, ou, pe):
     cells = []
 
     return cells
 
     
     
-cells = getCell(data['metaData']['items'], data['metaData']['dimensions']['dx'], data['metaData']['items'], data['metaData']['dimensions']['ou'],data['metaData']['items'], data['metaData']['dimensions']['pe'])
+cells = getCell(data['metaData']['items'], data['metaData']['dimensions']['dx'], data['metaData']['dimensions']['ou'], data['metaData']['dimensions']['pe'])
 
 def column(items, period):
     cols = [' ', ' ']
