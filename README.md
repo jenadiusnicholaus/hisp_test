@@ -13,7 +13,7 @@ With virtual environment activated
 
 > pip install -r requirements.txt
 
-then cd ~/hisptest
+then cd ~/hisp_test
 
 ## finally
 
