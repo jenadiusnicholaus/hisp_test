@@ -9,7 +9,7 @@ With virtual environment activated
 
 > Linux , in terminal type . env/bin/activate
 
-## install requirements in project
+## install requirements in a project
 
 > pip install -r requirements.txt
 
