@@ -1,8 +1,8 @@
 import pprintpp
 from tabulate import tabulate
-from utils import columns, data, getCell, rows
+from utils import columns, data, rows
 
-pprintpp.pprint(data)
+# pprintpp.pprint(data)
 
 
 

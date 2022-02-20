@@ -10,15 +10,49 @@ def groupCellBy():
 
 
 def getCell(items ,dx, ou, pe, rows):
-    cells = []
-    for d in dx:
-         for row in rows:
-            if d in row:
-                # print(row[-1])
-                cells.append(row[-1])
+    cells_data =[]
+    cells_dimensions = []
+  
+    for row in rows:
+        nested_list =[]
+        dimensions = []
+        cells_data.append(nested_list)
+        cells_dimensions.append(dimensions)
 
-    print(cells)
-    return cells
+        for d in dx:
+            if d in row:
+                dimensions.append(d)
+                nested_list.append(row[-1])
+
+
+        for p in pe:
+            if p in row:
+                dimensions.append(p)
+                nested_list.append(row[-1])
+
+        for o in ou:
+            if o in row:
+                dimensions.append(o)
+                nested_list.append(row[-1])
+
+            # print(dimensions)
+            # print(cells_dimensions)
+    # for dms in cells_dimensions:
+    #     # print(dms)
+        
+    #     # cells_data.append(nested_list)
+    #     for (a , b , c ,d) in rows:
+    #         nested_list =[]
+    #         cells_data.append(nested_list)
+    #         if a in dms and b in dms and c in dms:
+    #             nested_list.append(d)
+            
+
+    #         # print(cells_data)
+    #         print(nested_list)
+   
+            
+    return cells_data
 
 cells = getCell(
     data['metaData']['items'],
@@ -27,9 +61,15 @@ cells = getCell(
     data['metaData']['dimensions']['pe'],
     data['rows'])
 
+print(cells)
+
+def finalcell(cells):
+    for cell in cells:
+        return cell
+
 def getNestedRow(dx , items ):
     """
-        generatig nested rows from pe
+        generatig nested rows from dx
     """
     nested_rows  = []
     for item in items:
@@ -59,26 +99,19 @@ def rows(items, ou):
     """
     rows = []
     for item in items:
-
-        # '\n'.join(['147.1','7376' , '9393']), 
-        # '\n'.join(['147.1','7376' , '9393']) ,
-        # '\n'.join(['147.1','7376' , '9393']), 
-        # '\n'.join(['147.1','7376' , '9393']),
-        # '\n'.join(['147.1','7376' , '9393']) ]
         if item in ou:
             # just for testing
             rows.append([
                 items[item]['name'], 
-                "\n".join(nested_rows), 
-               '\n'.join(cells[:3]),
-               '\n'.join(cells[:3]),
-               '\n'.join(cells[:3]),
-               '\n'.join(cells[:3]),
-               '\n'.join(cells[:3]),
-               
-                ]
+                "\n".join(nested_rows),
+                '\n'.join(['147.1','77.6' , '9.3']), 
+                '\n'.join(['97.1','7376' , '9393']) ,
+                '\n'.join(['14.1','23.0' , '93.4']), 
+                '\n'.join(['89.1','73.76' , '1.93']),
+                '\n'.join(['17.1','73.09' , '9.93']),
+                '\n'.join(['187.1','73.76' , '9.43']) 
+                    ]
                 )
-            # print([items[item]['name']])
-    # print(rows)
+           
     return rows
 
